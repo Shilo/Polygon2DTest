@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://blamnbnvr4wdi"]
+
+[ext_resource type="Script" path="res://Pizza.gd" id="1_xbv1o"]
+[ext_resource type="PackedScene" uid="uid://b4keopso1f2s3" path="res://Slice.tscn" id="2_w3jno"]
+[ext_resource type="Texture2D" uid="uid://bx0e3ipldhk7g" path="res://slice2.png" id="3_indcl"]
+
+[node name="Pizza" type="Node2D"]
+script = ExtResource("1_xbv1o")
+slice_colors = PackedColorArray(1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0.662745, 0.662745, 0.662745, 1, 1, 1, 1, 1, 0.545098, 0, 0, 1, 0, 0.392157, 0, 1, 0, 0, 0.545098, 1, 0, 0.545098, 0.545098, 1, 0.580392, 0, 0.827451, 1)
+
+[node name="Slice0" type="Polygon2D" parent="." instance=ExtResource("2_w3jno")]
+modulate = Color(1, 0, 0, 1)
+texture_repeat = 1
+texture = ExtResource("3_indcl")
+polygon = PackedVector2Array(0, 0, 150, 0, 150, 150, 9.18455e-15, 150)
+
+[node name="Slice1" type="Polygon2D" parent="." instance=ExtResource("2_w3jno")]
+modulate = Color(0, 1, 0, 1)
+texture_repeat = 1
+rotation = 1.5708
+texture = ExtResource("3_indcl")
+polygon = PackedVector2Array(0, 0, 150, 0, 150, 150, 9.18455e-15, 150)
+
+[node name="Slice2" type="Polygon2D" parent="." instance=ExtResource("2_w3jno")]
+modulate = Color(0, 0, 1, 1)
+texture_repeat = 1
+rotation = 3.14159
+texture = ExtResource("3_indcl")
+polygon = PackedVector2Array(0, 0, 150, 0, 150, 150, 9.18455e-15, 150)
+
+[node name="Slice3" type="Polygon2D" parent="." instance=ExtResource("2_w3jno")]
+modulate = Color(1, 1, 0, 1)
+texture_repeat = 1
+rotation = 4.71239
+texture = ExtResource("3_indcl")
+polygon = PackedVector2Array(0, 0, 150, 0, 150, 150, 9.18455e-15, 150)

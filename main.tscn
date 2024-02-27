@@ -1,0 +1,80 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjj1aboan7ui"]
+
+[ext_resource type="PackedScene" uid="uid://blamnbnvr4wdi" path="res://node_2d.tscn" id="1_dwffm"]
+[ext_resource type="Script" path="res://main.gd" id="1_usqps"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_usqps")
+metadata/_edit_horizontal_guides_ = [304.0]
+
+[node name="Pizza" parent="." instance=ExtResource("1_dwffm")]
+position = Vector2(595, 304)
+
+[node name="Picker" type="ColorRect" parent="."]
+unique_name_in_owner = true
+offset_left = 593.0
+offset_top = 134.0
+offset_right = 597.0
+offset_bottom = 174.0
+color = Color(0, 0, 0, 1)
+
+[node name="WinBoard" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 575.0
+offset_top = 36.0
+offset_right = 615.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(20, 36)
+
+[node name="Label" type="Label" parent="WinBoard"]
+layout_mode = 2
+text = "WIN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Win" type="Label" parent="WinBoard"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 533.0
+offset_top = 495.0
+offset_right = 656.0
+offset_bottom = 596.0
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+text = "Spin"
+
+[node name="Auto" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+toggle_mode = true
+text = "Auto"
+
+[node name="Slices" type="SpinBox" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = 2.0
+max_value = 16.0
+value = 8.0
+alignment = 1
+suffix = "slices"
+select_all_on_focus = true
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Auto" to="." method="_on_auto_pressed"]
+[connection signal="value_changed" from="VBoxContainer/Slices" to="." method="_on_slices_value_changed"]
